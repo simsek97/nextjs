@@ -1,8 +1,15 @@
-import type { AppProps /*, AppContext */ } from 'next/app';
+import App from 'next/app';
+import Layout from '../components/layout/Layout';
 import '../styles/globals.css';
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
-}
+export default class MyApp extends App {
+  render() {
+    const { Component, pageProps } = this.props;
 
-export default MyApp;
+    return (
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    );
+  }
+}

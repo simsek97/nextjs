@@ -8,9 +8,12 @@
     "start": "next start"
   },
   "dependencies": {
+    "@cbs-sports/fantasy-client-shared-lib": "^1.31.12",
     "next": "9.5.4",
     "react": "16.13.1",
-    "react-dom": "16.13.1"
+    "react-dom": "16.13.1",
+    "styled-components": "^5.2.3",
+    "tslib": "^2.2.0"
   },
   "devDependencies": {
     "@types/node": "^14.14.37",
