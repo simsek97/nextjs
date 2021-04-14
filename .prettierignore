@@ -1,0 +1,7 @@
+node_modules
+yarn.lock
+public
+.next
+.vscode
+amplify
+out
