@@ -2,6 +2,7 @@ import React from 'react';
 import Footer from './Footer';
 import Marquee from './Marquee';
 
+
 type TLayoutProps = {
   children: React.ReactNode;
 };
@@ -12,7 +13,6 @@ const Layout: React.FC<TLayoutProps> = (props) => {
   return (
     <div className='layout'>
       <Marquee />
-        {children}
       <Footer />
     </div>
   );
