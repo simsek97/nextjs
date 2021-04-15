@@ -2,6 +2,7 @@ import React from 'react';
 import Footer from './Footer';
 import Marquee from './Marquee';
 import dynamic from 'next/dynamic'
+import BaseGlobalStyles from "@cbs-sports/fantasy-client-shared-lib/build/cjs/components/BaseGlobalStyles";
 
 
 type TLayoutProps = {
@@ -18,6 +19,7 @@ const Layout: React.FC<TLayoutProps> = (props) => {
 
   return (
     <div className='layout'>
+      <BaseGlobalStyles />
       <DynamicHeaderWithNoSSR />
       <Marquee />
       {children}
