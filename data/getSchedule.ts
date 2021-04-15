@@ -1,7 +1,7 @@
 import useSWR from "swr";
-import fetcher from "../../components/utils/fetcher";
-import leagueToAbbreviation from "../../components/utils/leagueToAbbreviation";
-import { IPrimpyGameResponse } from "../../components/utils/primpy-types";
+import fetcher from "../components/utils/fetcher";
+import leagueToAbbreviation from "../components/utils/leagueToAbbreviation";
+import { IPrimpyGameResponse } from "../components/utils/primpy-types";
 import { prod } from "../config";
 
 type TScheduleApiReturn = {
