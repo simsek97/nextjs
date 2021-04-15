@@ -5,34 +5,39 @@
     align-items: center;
     max-width: 1440px;
     margin: 24px auto;
-
+    padding: 0 10px;
 }
 
 .pageTitle {
+    font-family: "FS Industrie",Helvetica,Arial,sans-serif;
     display: flex;
+    align-items: center;
 }
 
 .logo {
     background-color: #001b54;
     padding: 16px;
     display: flex;
-    height: 80px;
-    width: 80px;
+    height: 60px;
+    width: 60px;
     border-radius: 50%;
     box-sizing: border-box;
     margin-right: 24px;
 }
 
 .pageTitle img {
-    width: 48px;
+    width: auto;
 }
 
 .pageTitle h1 {
     margin-bottom: auto;
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: -0.2px;
 }
 
 .pageTitle aside {
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 400;
     color: #757678;
 }
@@ -50,3 +55,23 @@
     max-width: 100%;
 }
 
+@media (min-width: 1040px) {
+    .container {
+        margin: 24px auto;
+    }
+
+    .pageTitle aside {
+        font-size: 14px;
+        font-weight: 400;
+    }
+
+    .logo {
+        height: 60;
+        width: 60;
+    }
+
+    .pageTitle img {
+        width: 48px;
+    }
+
+ }
