@@ -1,0 +1,52 @@
+.container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1440px;
+    margin: 24px auto;
+
+}
+
+.pageTitle {
+    display: flex;
+}
+
+.logo {
+    background-color: #001b54;
+    padding: 16px;
+    display: flex;
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    margin-right: 24px;
+}
+
+.pageTitle img {
+    width: 48px;
+}
+
+.pageTitle h1 {
+    margin-bottom: auto;
+}
+
+.pageTitle aside {
+    font-size: 14px;
+    font-weight: 400;
+    color: #757678;
+}
+
+.sponsor {
+    height: auto;
+    width: 90px;
+}
+
+.sponsor figure {
+    margin: 0;
+}
+
+.sponsor img {
+    max-width: 100%;
+}
+
