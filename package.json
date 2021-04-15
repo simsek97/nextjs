@@ -30,6 +30,7 @@
     "react-draggable": "^4.4.3",
     "react-router-dom": "^5.2.0",
     "styled-components": "^5.2.3",
+    "swr": "^0.5.5",
     "tslib": "^2.2.0"
   },
   "devDependencies": {
