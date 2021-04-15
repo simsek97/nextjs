@@ -66,12 +66,12 @@
     }
 
     .logo {
-        height: 60;
-        width: 60;
+        height: 80px;
+        width: 80px;
     }
 
     .pageTitle img {
-        width: 48px;
+        width: 100%;
     }
 
  }
