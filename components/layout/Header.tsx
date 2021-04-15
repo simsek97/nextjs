@@ -60,7 +60,13 @@ const props = {
 const Header: React.FC = () => {
   return (
     <BrowserRouter>
-      <SiteNav links={props.links}/>
+      <SiteNav 
+        links={props.links}
+        logoUrl="https://sportsfly.cbsistatic.com/bundles/sportsmediacss/images/core/cbssports-dc-horizontal-logo.svg"
+        hideMessageIcon="true"
+        hideQuestionIcon="true"
+        hideSearchIcon="true"
+      />
     </BrowserRouter>
   );
 };
