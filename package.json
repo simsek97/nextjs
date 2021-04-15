@@ -23,7 +23,7 @@
     ]
   },
   "dependencies": {
-    "@cbs-sports/fantasy-client-shared-lib": "^1.31.12",
+    "@cbs-sports/fantasy-client-shared-lib": "^2.0",
     "next": "9.5.4",
     "react": "16.13.1",
     "react-dom": "16.13.1",

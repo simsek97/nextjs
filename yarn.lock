@@ -1062,10 +1062,10 @@
     lodash "^4.17.19"
     to-fast-properties "^2.0.0"
 
-"@cbs-sports/fantasy-client-shared-lib@^1.31.12":
-  version "1.31.12"
-  resolved "https://npm.pkg.github.com/download/@cbs-sports/fantasy-client-shared-lib/1.31.12/a5cedc41cb4a0700b6383922f05b7b3ca9c94cbb031c004d0aa221f6fcd10f1e#1d52500150aa23df1e9cbf740ca8d14dd3d5f3f0"
-  integrity sha512-PKuYl5BlIXLAGz18FwlD55hWUJqHhIWtZBKYXaQL3wV6N5JKqSDmwwn1gGDwJwM8MexdKhDA/WGf3jAQTHAmWA==
+"@cbs-sports/fantasy-client-shared-lib@^2.0":
+  version "2.0.1"
+  resolved "https://npm.pkg.github.com/download/@cbs-sports/fantasy-client-shared-lib/2.0.1/7bd3b8f8493d5ea09720498b3ae2f85fc01d9c7b56a85ddcaa2bef562bcde082#904ae380a189af84840f1f70a1b867a373e6ea13"
+  integrity sha512-55FugiPItEmC8d+dYwnqPLelfUlr4NJgSUckSo3gekPkqODEqCK4nklP0rS0gq8oJktEz3bIy9fvOeMD3+cHFg==
   dependencies:
     uuid "^8.3.2"
 
