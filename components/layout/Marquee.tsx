@@ -20,7 +20,7 @@ const Marquee: React.FC = () => {
         <div>
           <h1>UEFA Champions League Scores</h1>
           <aside>
-            Scores for {settings && dateFns.format(settings.selectedDate, "MMM dd, yyyy")}
+            Scores for {settings && dateFns.format(new Date(settings.selectedDate), "MMM dd, yyyy")}
           </aside>
         </div>
       </div>

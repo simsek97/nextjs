@@ -25,16 +25,17 @@ const Home: React.FC = () => {
   const dateFns = new DateFnsAdapter({ locale: enUS });
 
   const handleTabChange = (_event: React.SyntheticEvent<Element, Event>, newDate: Date) => {
-    setSelectedDate(newDate);
+    handleDateChange(newDate);
 
-    saveSettings({
-      selectedDate: newDate
-    });
     // navigate();
   };
 
   const handleDateChange = (date: Date | null) => {
     setSelectedDate(date);
+
+    saveSettings({
+      selectedDate: date
+    });
   };
 
   React.useEffect(() => {
