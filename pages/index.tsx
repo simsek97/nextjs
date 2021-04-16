@@ -1,16 +1,42 @@
 import React from "react";
 import Head from "next/head";
 import { MuiPickersUtilsProvider, KeyboardDatePicker } from "@material-ui/pickers";
-import DateFnsUtils from "@date-io/date-fns";
+import DateFnsAdapter from "@date-io/date-fns";
+import { enUS } from "date-fns/locale";
 import SoccerScoreboard from "./soccer/[league]/scoreboard";
 import styles from "../styles/Home.module.css";
+import {
+  Box,
+  Typography,
+  Tabs,
+  Tab,
+  Card,
+  CardHeader,
+  Divider,
+  CardContent
+} from "@material-ui/core";
 
 const Home: React.FC = () => {
   const [selectedDate, setSelectedDate] = React.useState<Date | null>(new Date());
+  const [selectedDateBefore, setSelectedDateBefore] = React.useState<Date | null>(null);
+  const [selectedDateAfter, setSelectedDateAfter] = React.useState<Date | null>(null);
+  const dateFns = new DateFnsAdapter({ locale: enUS });
+
+  const handleTabChange = (_event: React.SyntheticEvent<Element, Event>, newDate: Date) => {
+    setSelectedDate(newDate);
+    // navigate();
+  };
 
   const handleDateChange = (date: Date | null) => {
     setSelectedDate(date);
   };
+
+  React.useEffect(() => {
+    const selDateBefore = dateFns.addDays(selectedDate, -1);
+    const selDateAfter = dateFns.addDays(selectedDate, 1);
+    setSelectedDateBefore(selDateBefore);
+    setSelectedDateAfter(selDateAfter);
+  }, [selectedDate]);
 
   return (
     <div className={styles.container}>
@@ -29,22 +55,76 @@ const Home: React.FC = () => {
       </Head>
 
       <main className={styles.main}>
-        <div className={styles.ScoreboardNav}>
-          <MuiPickersUtilsProvider utils={DateFnsUtils}>
-            <KeyboardDatePicker
-              disableToolbar
-              variant="inline"
-              format="MM/dd/yyyy"
-              margin="normal"
-              value={selectedDate}
-              onChange={handleDateChange}
-              KeyboardButtonProps={{
-                "aria-label": "change date"
-              }}
-            />
-          </MuiPickersUtilsProvider>
-        </div>
-        <SoccerScoreboard />
+        <Card style={{ width: "100%" }}>
+          <CardHeader
+            style={{ paddingLeft: 32 }}
+            title={
+              <Typography variant="h4" style={{ fontWeight: "bold" }}>
+                Scores
+              </Typography>
+            }
+          />
+          <Divider />
+
+          <CardContent style={{ display: "flex", alignItems: "center", padding: "0 16px" }}>
+            <Box style={{ height: 40 }}>
+              <Tabs
+                value={selectedDate}
+                onChange={handleTabChange}
+                indicatorColor="primary"
+                textColor="primary"
+                scrollButtons="auto"
+                variant="scrollable"
+                aria-label="page tabs">
+                <Tab
+                  key="daybefore"
+                  label={selectedDateBefore && dateFns.format(selectedDateBefore, "MMM dd, yyyy")}
+                  value={selectedDateBefore}
+                />
+                <Tab
+                  key="day"
+                  label={selectedDate && dateFns.format(selectedDate, "MMM dd, yyyy")}
+                  value={selectedDate}
+                />
+                <Tab
+                  key="dayafter"
+                  label={selectedDateAfter && dateFns.format(selectedDateAfter, "MMM dd, yyyy")}
+                  value={selectedDateAfter}
+                />
+              </Tabs>
+            </Box>
+
+            <Box style={{ flexGrow: 1 }}></Box>
+
+            <Box>
+              <MuiPickersUtilsProvider utils={DateFnsAdapter}>
+                <KeyboardDatePicker
+                  autoOk={true}
+                  disableToolbar
+                  variant="inline"
+                  format="MM/dd/yyyy"
+                  margin="normal"
+                  value={selectedDate}
+                  onChange={handleDateChange}
+                  KeyboardButtonProps={{
+                    "aria-label": "change date"
+                  }}
+                />
+              </MuiPickersUtilsProvider>
+            </Box>
+          </CardContent>
+
+          <Divider />
+
+          <CardContent>
+            {selectedDate && (
+              <SoccerScoreboard
+                startDate={dateFns.format(selectedDate, "yyyyMMdd")}
+                endDate={dateFns.format(selectedDate, "yyyyMMdd")}
+              />
+            )}
+          </CardContent>
+        </Card>
       </main>
     </div>
   );
