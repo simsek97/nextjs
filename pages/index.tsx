@@ -67,7 +67,7 @@ const Home: React.FC = () => {
             style={{ paddingLeft: 32 }}
             title={
               <Typography variant="h4" style={{ fontWeight: "bold" }}>
-                Scoress
+                Scores
               </Typography>
             }
           />
