@@ -1,7 +1,17 @@
+import React from "react";
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
+import SoccerScoreboard from "./soccer/[league]/scoreboard";
+import { MuiPickersUtilsProvider, KeyboardDatePicker } from "@material-ui/pickers";
+import DateFnsUtils from "@date-io/date-fns";
 
-export default function Home() {
+const Home: React.FC = () => {
+  const [selectedDate, setSelectedDate] = React.useState<Date | null>(new Date());
+
+  const handleDateChange = (date: Date | null) => {
+    setSelectedDate(date);
+  };
+
   return (
     <div className={styles.container}>
       <Head>
@@ -18,7 +28,26 @@ export default function Home() {
         />
       </Head>
 
-      <main className={styles.main}></main>
+      <main className={styles.main}>
+        <div className={styles.ScoreboardNav}>
+          <MuiPickersUtilsProvider utils={DateFnsUtils}>
+            <KeyboardDatePicker
+              disableToolbar
+              variant="inline"
+              format="MM/dd/yyyy"
+              margin="normal"
+              value={selectedDate}
+              onChange={handleDateChange}
+              KeyboardButtonProps={{
+                "aria-label": "change date"
+              }}
+            />
+          </MuiPickersUtilsProvider>
+        </div>
+        <SoccerScoreboard />
+      </main>
     </div>
   );
-}
+};
+
+export default Home;

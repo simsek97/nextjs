@@ -1,77 +1,75 @@
 .container {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1440px;
-    margin: 24px auto;
-    padding: 0 10px;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 20px 32px 0;
+  border-bottom: 1px solid #d9dbde;
 }
 
 .pageTitle {
-    font-family: "FS Industrie",Helvetica,Arial,sans-serif;
-    display: flex;
-    align-items: center;
+  font-family: "FS Industrie", Helvetica, Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+  margin-top: 24px;
 }
 
 .logo {
-    background-color: #001b54;
-    padding: 16px;
-    display: flex;
-    height: 60px;
-    width: 60px;
-    border-radius: 50%;
-    box-sizing: border-box;
-    margin-right: 24px;
+  background-color: #001b54;
+  padding: 16px;
+  display: flex;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  box-sizing: border-box;
+  margin-right: 24px;
 }
 
 .pageTitle img {
-    width: auto;
+  width: auto;
 }
 
 .pageTitle h1 {
-    margin-bottom: auto;
-    font-size: 20px;
-    font-weight: 800;
-    letter-spacing: -0.2px;
+  margin-bottom: auto;
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.2px;
 }
 
 .pageTitle aside {
-    font-size: 12px;
-    font-weight: 400;
-    color: #757678;
+  font-size: 12px;
+  font-weight: 400;
+  color: #757678;
 }
 
 .sponsor {
-    height: auto;
-    width: 90px;
+  height: auto;
+  width: 90px;
 }
 
 .sponsor figure {
-    margin: 0;
+  margin: 0;
 }
 
 .sponsor img {
-    max-width: 100%;
+  max-width: 100%;
 }
 
 @media (min-width: 1040px) {
-    .container {
-        margin: 24px auto;
-    }
+  .pageTitle aside {
+    font-size: 14px;
+    font-weight: 400;
+  }
 
-    .pageTitle aside {
-        font-size: 14px;
-        font-weight: 400;
-    }
+  .logo {
+    height: 80px;
+    width: 80px;
+  }
 
-    .logo {
-        height: 80px;
-        width: 80px;
-    }
-
-    .pageTitle img {
-        width: 100%;
-    }
-
- }
+  .pageTitle img {
+    width: 100%;
+  }
+}
