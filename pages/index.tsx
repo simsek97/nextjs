@@ -1,31 +1,53 @@
-import Head from 'next/head';
-import styles from '../styles/Home.module.css';
+import React from "react";
+import Head from "next/head";
+import { MuiPickersUtilsProvider, KeyboardDatePicker } from "@material-ui/pickers";
+import DateFnsUtils from "@date-io/date-fns";
+import SoccerScoreboard from "./soccer/[league]/scoreboard";
+import styles from "../styles/Home.module.css";
 
-export default function Home() {
+const Home: React.FC = () => {
+  const [selectedDate, setSelectedDate] = React.useState<Date | null>(new Date());
+
+  const handleDateChange = (date: Date | null) => {
+    setSelectedDate(date);
+  };
+
   return (
     <div className={styles.container}>
       <Head>
-        <title>Create Next App</title>
-        <link rel='icon' href='/favicon.ico' />
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=0" />
+        <title>
+          CBS Sports - News, Live Scores, Schedules, Fantasy Games, Video and more. - CBSSports.com
+        </title>
+        <link
+          rel="icon"
+          href="https://sportsfly.cbsistatic.com/bundles/sportsmediacss/images/core/cbssports-app-icon.svg"
+        />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=0"
+        />
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href='https://nextjs.org'>Next.js in AWS!</a>
-        </h1>
-
-        <div className={styles.grid}>
-          <a href='https://nextjs.org/docs' className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-          </a>
-
-          <a href='https://nextjs.org/learn' className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
+        <div className={styles.ScoreboardNav}>
+          <MuiPickersUtilsProvider utils={DateFnsUtils}>
+            <KeyboardDatePicker
+              disableToolbar
+              variant="inline"
+              format="MM/dd/yyyy"
+              margin="normal"
+              value={selectedDate}
+              onChange={handleDateChange}
+              KeyboardButtonProps={{
+                "aria-label": "change date"
+              }}
+            />
+          </MuiPickersUtilsProvider>
         </div>
+        <SoccerScoreboard />
       </main>
     </div>
   );
-}
+};
+
+export default Home;

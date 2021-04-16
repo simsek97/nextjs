@@ -1,6 +1,6 @@
 import React from "react";
 // import { useRouter } from "next/router";
-import getSchedule from "../../data/getSchedule";
+import getSchedule from "../../../data/getSchedule";
 import { IGame } from "../../../components/utils/common-types";
 import Demo from "../../../components/scoreboard/Demo"
 const SoccerScoreboard: React.FC = () => {

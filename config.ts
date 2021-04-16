@@ -8,3 +8,4 @@ const qa = {
 };
 
 export { prod, qa };
+export default prod;
