@@ -1,9 +1,9 @@
 import React from "react";
 import Head from "next/head";
-import styles from "../styles/Home.module.css";
-import SoccerScoreboard from "./soccer/[league]/scoreboard";
 import { MuiPickersUtilsProvider, KeyboardDatePicker } from "@material-ui/pickers";
 import DateFnsUtils from "@date-io/date-fns";
+import SoccerScoreboard from "./soccer/[league]/scoreboard";
+import styles from "../styles/Home.module.css";
 
 const Home: React.FC = () => {
   const [selectedDate, setSelectedDate] = React.useState<Date | null>(new Date());
