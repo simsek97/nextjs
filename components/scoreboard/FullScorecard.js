@@ -1,5 +1,4 @@
 import React from "react";
-import NBAIcon from "@cbs-sports/fantasy-client-shared-lib/build/cjs/components/icons/IcoMoonIcons/NBAIcon";
 import styled from "styled-components";
 
 const ScoreCard = styled.div`

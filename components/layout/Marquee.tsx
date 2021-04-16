@@ -1,7 +1,13 @@
 import React from "react";
+import DateFnsAdapter from "@date-io/date-fns";
+import { enUS } from "date-fns/locale";
+import useSettings from "../../src/hooks/useSettings";
 import styles from "../../styles/Marquee.module.css";
 
 const Marquee: React.FC = () => {
+  const { settings } = useSettings();
+  const dateFns = new DateFnsAdapter({ locale: enUS });
+
   return (
     <div className={styles.container}>
       <div className={styles.pageTitle}>
@@ -13,7 +19,9 @@ const Marquee: React.FC = () => {
         </div>
         <div>
           <h1>UEFA Champions League Scores</h1>
-          <aside>Scores for Apr 14, 2021</aside>
+          <aside>
+            Scores for {settings && dateFns.format(settings.selectedDate, "MMM dd, yyyy")}
+          </aside>
         </div>
       </div>
       <div className={styles.sponsor}>

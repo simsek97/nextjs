@@ -15,15 +15,21 @@ import {
   Divider,
   CardContent
 } from "@material-ui/core";
+import useSettings from "../src/hooks/useSettings";
 
 const Home: React.FC = () => {
   const [selectedDate, setSelectedDate] = React.useState<Date | null>(new Date());
   const [selectedDateBefore, setSelectedDateBefore] = React.useState<Date | null>(null);
   const [selectedDateAfter, setSelectedDateAfter] = React.useState<Date | null>(null);
+  const { saveSettings } = useSettings();
   const dateFns = new DateFnsAdapter({ locale: enUS });
 
   const handleTabChange = (_event: React.SyntheticEvent<Element, Event>, newDate: Date) => {
     setSelectedDate(newDate);
+
+    saveSettings({
+      selectedDate: newDate
+    });
     // navigate();
   };
 

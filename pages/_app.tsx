@@ -2,6 +2,7 @@ import React from "react";
 import App from "next/app";
 import { ThemeProvider } from "@material-ui/core";
 import { createMuiTheme } from "@material-ui/core/styles";
+import { SettingsProvider } from "../src/contexts/SettingsContext";
 import Layout from "../components/layout/Layout";
 import "../styles/globals.css";
 
@@ -15,11 +16,13 @@ export default class MyApp extends App {
     const { Component, pageProps } = this.props;
 
     return (
-      <ThemeProvider theme={theme}>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
-      </ThemeProvider>
+      <SettingsProvider>
+        <ThemeProvider theme={theme}>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </ThemeProvider>
+      </SettingsProvider>
     );
   }
 }
